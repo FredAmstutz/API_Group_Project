@@ -19,8 +19,8 @@ console.log(timeStamp);
 var getMarvelCharacter = {
     url: 'http://gateway.marvel.com/v1/public/characters',
     method: 'GET',
-    name: 'spider-man',
     qs: {
+        name: 'spider-man',
         ts: timeStamp,
         apikey: publicKey,
         hash: md5(timeStamp + privateKey + publicKey)
