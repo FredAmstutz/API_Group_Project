@@ -27,7 +27,6 @@ var getMarvelCharacter = {
     }
     
 }
-//http://gateway.marvel.com/v1/public/characters?name=spider-man&ts=60&apikey=b657ce51c096cc18084526e359a33a19&hash=0eeab4983b0ffe8f95baf8ffa6b125fd
 
 app.get('/', function (req, res) {
     request(getMarvelCharacter).then(function (data){
