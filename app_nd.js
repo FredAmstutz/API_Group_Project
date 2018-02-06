@@ -59,7 +59,8 @@ app.get('/', function (req, res) {
         const nomalizedHeroDetail = heroDetail.map(function (detail) {
            return normalizeData(detail);
         })
-        res.send(nomalizedHeroDetail);
+        //res.send(nomalizedHeroDetail);
+        res.render('team');
     })    
 })
 
