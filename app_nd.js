@@ -20,7 +20,7 @@ var getMarvelCharacter = {
     url: 'http://gateway.marvel.com/v1/public/characters',
     method: 'GET',
     qs: {
-        name: $userInput,
+        name: 'Spider-man',
         limit: 100,
         ts: timeStamp,
         apikey: publicKey,
@@ -85,6 +85,7 @@ app.get('/', function (req, res) {
         }
 
         res.render('test', result);
+        // res.send(result);
         // res.render('team', result)
         // res.send(result);
     })    
