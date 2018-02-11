@@ -21,7 +21,7 @@ var getMarvelCharacter = {
     method: 'GET',
     qs: {
         // name: 'spider-man',
-        // limit: 60,
+        limit: 100,
         ts: timeStamp,
         apikey: publicKey,
         hash: md5(timeStamp + privateKey + publicKey),
@@ -57,10 +57,19 @@ app.get('/', function (req, res) {
     })
     .then(function (heroDetail) {
         const nomalizedHeroDetail = heroDetail.map(function (detail) {
-           return normalizeData(detail);
+                
+            const result =  normalizeData(detail);
+            // console.log(result.thumbnailJpg);
+            result.thumbnailJpg += '/portrait_xlarge.jpg'
+            return result
         })
-        //res.send(nomalizedHeroDetail);
-        res.render('team');
+        const result = {
+            heros: nomalizedHeroDetail
+        }
+
+        // res.render('test', result);
+        res.render('team')
+        // res.send(result);
     })    
 })
 
