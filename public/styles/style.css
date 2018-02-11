@@ -17,7 +17,7 @@ body:before {
     -moz-filter: blur(5px);
     -o-filter: blur(5px);
     -ms-filter: blur(5px);
-    filter: blur(5px);
+    filter: blur(5px); 
 }
 
 .newyork:before {
@@ -123,11 +123,11 @@ body:before {
     width: 100%;
     height: 100%;
     
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+    -webkit-filter: blur(4px);
+    -moz-filter: blur(4px);
+    -o-filter: blur(4px);
+    -ms-filter: blur(4px);
+    filter: blur(4px);
 }
 
 .sydney:before {
@@ -145,11 +145,11 @@ body:before {
     width: 100%;
     height: 100%;
     
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
 }
 
 .dubai:before {
@@ -167,11 +167,11 @@ body:before {
     width: 100%;
     height: 100%;
     
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
 }
 
 .rio:before {
@@ -189,11 +189,11 @@ body:before {
     width: 100%;
     height: 100%;
     
-    -webkit-filter: blur(5px);
-    -moz-filter: blur(5px);
-    -o-filter: blur(5px);
-    -ms-filter: blur(5px);
-    filter: blur(5px);
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
 }
 
 body {
@@ -201,21 +201,21 @@ body {
     text-align: center;
     color: white;
 }
+.team-name {
+    height: 200px;
+    width: 40%;
+    margin: auto;
+}
 
 .team-name input {
     width: 200px;
 }
 
+
 #team-name-heading {
-    height: 60px;
-    width: 100%;
-    text-align: center;
-    background-color: white;
-}
-
-#team-name-heading h1 {
-    color: white;
-
+    color: rgb(122, 36, 36);
+    font-size: 3em;
+    font-weight: bold;
 }
 
 .heroes {

@@ -3,7 +3,7 @@
     const cityButton = document.getElementById('city-button');
 
     cityButton.addEventListener('click', function() {
-        var background = document.getElementById('body');
+        var background = document.querySelector('body');
         
         if(cityMenu.value === 'losangeles') {
             background.classList = '';
