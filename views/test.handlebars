@@ -5,13 +5,21 @@
     
             </div>
             <input id="heroName" type="text" value="spider-man">
-  
-            <img src={{heros[0].thumbnailJpg}} alt="">
+            <img src={{heros.[0].thumbnailJpg}} alt="">
             <br>
             <label>Select Hero</label>
         </li>
 
-<script>
+            <script>
+                const newImage = heros.[0].thumbnailJpg.attr(src);;
+                console.log(newImage);
+                const thumnail = document.getElementsByClassName('thumbnail');
+                console.log(thumnail);
+                document.getElementsByClassName('thumbnail').style.backgroundImage = "url(newImage)"
+            </script>
+
+
+{{!-- <script>
     function getDataFromUserInput() {
             const $userInput = document.getElementById('heroName').value;
             console.log($userInput);
@@ -19,7 +27,7 @@
 
         getDataFromUserInput();
 
-</script>
+</script> --}}
 
 {{!-- {{#each heros}} 
     <img src={{thumbnailJpg}} alt=""> 
