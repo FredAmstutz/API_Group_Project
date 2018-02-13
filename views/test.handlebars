@@ -1,15 +1,45 @@
-{{!-- <h1>hello</h1> --}}
-{{#each heros}} 
+
+    <ul class="heroes">
+        <li id="first-hero">
+            <div class="thumbnail">
+    
+            </div>
+            <input id="heroName" type="text" value="spider-man">
+            <img src={{heros.[0].thumbnailJpg}} alt="">
+            <br>
+            <label>Select Hero</label>
+        </li>
+
+            <script>
+                const newImage = heros.[0].thumbnailJpg.attr(src);;
+                console.log(newImage);
+                const thumnail = document.getElementsByClassName('thumbnail');
+                console.log(thumnail);
+                document.getElementsByClassName('thumbnail').style.backgroundImage = "url(newImage)"
+            </script>
+
+
+{{!-- <script>
+    function getDataFromUserInput() {
+            const $userInput = document.getElementById('heroName').value;
+            console.log($userInput);
+        }
+
+        getDataFromUserInput();
+
+</script> --}}
+
+{{!-- {{#each heros}} 
     <img src={{thumbnailJpg}} alt=""> 
     <h1>{{heroName}}</h1>
     <h2>{{heroDescription}}</h2>
-{{/each}}
+{{/each}} --}}
 
-
-
-
-
-
-
-
-
+{{!-- <form action="http://http://localhost:3000/" method="post">
+    Hero name:
+    <br>
+    <input type="text" id="heroName" name="heroName" value="Mickey">
+    <br>
+    <br>
+    <input type="submit" value="Submit">
+</form> --}}
