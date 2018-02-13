@@ -29,6 +29,22 @@ var getMarvelCharacter = {
     json: true
 }
 
+function getMarvelCharacterByName(name) {
+    var getMarvelCharacter = {
+        url: 'http://gateway.marvel.com/v1/public/characters',
+        method: 'GET',
+        qs: {
+            name: name,
+            limit: 100,
+            ts: timeStamp,
+            apikey: publicKey,
+            hash: md5(timeStamp + privateKey + publicKey),
+        },
+        json: true
+    }
+    return getMarvelCharacter;
+}
+
 function normalizeData(hero) {
     const {
         // results: [{
@@ -71,6 +87,18 @@ app.get('/', function (req, res) {
         res.render('team')
         // res.send(result);
     })    
+})
+
+app.get('/name/:name', function(req, res) {
+    const name = req.params.name;
+    request(getMarvelCharacterByName('spider-man')).then(function(data){
+        const result = data.data.results[0];
+        return result;
+    })
+    .then(function(data) {
+        const heroData = normalizeData(data);
+        res.send(heroData);
+    })
 })
 
 
