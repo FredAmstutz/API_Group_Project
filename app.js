@@ -46,6 +46,7 @@ function getMarvelCharacterByName(name) {
 }
 
 function normalizeData(hero) {
+    
     const {
         // results: [{
             id: heroId,
@@ -53,14 +54,18 @@ function normalizeData(hero) {
             description: heroDescription,
             thumbnail: {
                 path: thumbnailJpg
-            }
+            },
+            urls: [{
+                url: heroUrl
+            }]
         // }]
     } = hero;
     return {
         heroId,
         heroName,
         heroDescription,
-        thumbnailJpg
+        thumbnailJpg,
+        heroUrl
     };
 };
 
@@ -95,6 +100,12 @@ app.get('/name/:name', function(req, res) {
     const name = req.params.name;
     request(getMarvelCharacterByName(name)).then(function(data){
         const result = data.data.results[0];
+        console.log(result);
+        if( result == undefined){
+            console.log('testing');
+
+            res.send('404');
+        }
         return result;
     })
     .then(function(data) {
@@ -102,10 +113,6 @@ app.get('/name/:name', function(req, res) {
         res.send(heroData);
     })
 })
-
-
-
-
 
 app.listen(3000, function() {
     console.log('Listening on port 3000');
