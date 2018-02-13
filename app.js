@@ -75,6 +75,7 @@ app.get('/', function (req, res) {
     request(getMarvelCharacter).then(function (Data){
         const result = Data.data.results;
         // res.send(result);
+        console.log(result);
         return result
     })
     .then(function (heroDetail) {
