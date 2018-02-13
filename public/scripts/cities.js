@@ -30,4 +30,3 @@ cityButton.addEventListener('click', function() {
         background.classList.add('newyork');
     }
 });
-
