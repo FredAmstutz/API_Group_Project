@@ -84,9 +84,9 @@ app.get('/', function (req, res) {
             heros: nomalizedHeroDetail
         }
 
-        res.render('test', result);
+        // res.render('test', result);
         // res.send(result);
-        // res.render('team', result)
+        res.render('team', result)
         // res.send(result);
     })    
 })
