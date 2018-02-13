@@ -201,6 +201,18 @@ body {
     text-align: center;
     color: white;
 }
+.brand {
+    position: absolute;
+    height: 200px;
+    width: 400px;
+    top: 10px;
+    left: 10px;
+    background-image: url('../images/heroup.jpg');
+    background-size: cover;
+ 
+    border: 3px solid white;
+}
+
 .team-name {
     height: 200px;
     width: 30%;
