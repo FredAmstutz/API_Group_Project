@@ -1,8 +1,8 @@
 const setTeamNameButton = document.querySelector('.team-name button');
 
 setTeamNameButton.addEventListener('click', function() {
-    const teamNameText = String(document.querySelector('.team-name input').value);
+    let teamNameText = document.querySelector('.team-name input');
     const teamName = document.querySelector('#team-name-heading');
-    
-    teamName.innerHTML = teamNameText;
+    teamName.innerHTML = String(teamNameText.value);
+    teamNameText.value = '';
 });
