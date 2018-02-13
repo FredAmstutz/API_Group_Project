@@ -93,7 +93,7 @@ app.get('/', function (req, res) {
 
 app.get('/name/:name', function(req, res) {
     const name = req.params.name;
-    request(getMarvelCharacterByName('spider-man')).then(function(data){
+    request(getMarvelCharacterByName(name)).then(function(data){
         const result = data.data.results[0];
         return result;
     })
