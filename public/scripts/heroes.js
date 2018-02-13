@@ -15,7 +15,7 @@ $(function(){
     }
     console.log($name);
     const result = $.ajax({
-    url: `/name/${$name.val()}`
+    url: `/name/${$name}`
     })
     result.then(function(data) {
         console.log(data);
