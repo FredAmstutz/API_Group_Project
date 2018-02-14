@@ -4,21 +4,16 @@ $(function(){
 });
     
  function getHeroImage () {
-    console.log('clicked');
-     const $this = $(this);
-    //console.log($this.data);
-    //$(this).parent().remove();
-    const $name = $this.parent().children('input').val();
+    const $this = $(this);
+    const $name = $this.parent().children('input');
     if($name == ""){
         alert('You need to type the name of your Hero.');
         return;
     }
-    console.log($name);
     const result = $.ajax({
-    url: `/name/${$name}`
+        url: `/name/${$name.val()}`
     })
     result.then(function(data) {
-        console.log(data);
         if(data == '404'){
             alert('Your name is wrong.');
             return false;
@@ -30,10 +25,8 @@ $(function(){
         $heroImage.attr('id', `${$id}`);
         $heroImage.attr('style',`background-image: url("${imageUrl}")`)
         $('.id').on('click', function(){
-            // const heroImage = $('.id');
-            // let heroDetail = data.heroUrl;
-            console.log('clicked');
 
         })
-        });
-    };
+    });
+    $name.val('');
+};
