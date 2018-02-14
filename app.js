@@ -75,6 +75,7 @@ app.get('/', function (req, res) {
     request(getMarvelCharacter).then(function (Data){
         const result = Data.data.results;
         // res.send(result);
+        console.log(result);
         return result
     })
     .then(function (heroDetail) {
@@ -83,6 +84,7 @@ app.get('/', function (req, res) {
             const result =  normalizeData(detail);
             // console.log(result.thumbnailJpg);
             result.thumbnailJpg += '/portrait_xlarge.jpg'
+            // res.send(result)
             return result
         })
         const result = {
