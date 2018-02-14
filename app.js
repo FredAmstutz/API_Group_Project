@@ -84,7 +84,7 @@ app.get('/', function (req, res) {
             const result =  normalizeData(detail);
             // console.log(result.thumbnailJpg);
             result.thumbnailJpg += '/portrait_xlarge.jpg'
-            res.send(result)
+            // res.send(result)
             return result
         })
         const result = {

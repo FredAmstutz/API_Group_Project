@@ -1,6 +1,6 @@
 $(function(){
-    $('.hero').on('click', 'button', getHeroImage)
-
+    $('.hero').on('click', 'button', getHeroImage);
+    $('.thumbnail').on('click', getHeroDetail);
 });
     
  function getHeroImage () {
@@ -24,9 +24,18 @@ $(function(){
         let $heroImage = $this.parent().children('.thumbnail')
         $heroImage.attr('id', `${$id}`);
         $heroImage.attr('style',`background-image: url("${imageUrl}")`)
-        $('.id').on('click', function(){
-
-        })
     });
-    $name.val('');
+};
+
+function getHeroDetail (){
+    const $this = $(this);
+    const $name = $this.parent().children('input').val();
+    const result = $.ajax({
+        url: `/name/${$name}`
+    })
+    result.then(function (data) {
+        const $heroDetailUrl = data.heroUrl;
+        $('.thumbnail').attr('href', $heroDetailUrl);
+        window.open($heroDetailUrl, '_blank');
+    })
 };
